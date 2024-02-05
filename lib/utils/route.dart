@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:waythru/ui/views/register.dart';
 import 'package:waythru/utils/utils.dart';
 
 import '../models/models.dart';
@@ -10,6 +11,7 @@ class Routes {
     return [
       const PageModel(route: Pages.initial, page: AuthView()),
       const PageModel(route: Pages.home, page: HomeView()),
+      const PageModel(route: Pages.register, page: RegisterView()),
 
       
     ];

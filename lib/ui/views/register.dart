@@ -5,8 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../cubits/cubits.dart';
 import '../widgets/widgets.dart';
 
-class AuthView extends StatelessWidget {
-  const AuthView({super.key});
+class RegisterView extends StatelessWidget {
+  const RegisterView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class AuthView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 VGap(height: 140.h),
-                Text('Login to Convo',
+                Text('Register',
                     style: TextStyle(
                         fontSize: 40.sp, fontWeight: FontWeight.bold)),
                 VGap(height: 10.h),
@@ -84,9 +84,9 @@ class AuthView extends StatelessWidget {
                 ),
                 VGap(height: 20.h),
                 AuthButton(
-                    label: 'Sign in',
+                    label: 'Register',
                     onTap: () {
-                      context.read<AuthCubit>().LOGIN();
+                      context.read<AuthCubit>().REGISTER();
                     },
                     outlined: false),
                 VGap(height: 30.h),
@@ -99,10 +99,7 @@ class AuthView extends StatelessWidget {
                 )),
                 VGap(height: 30.h),
                 AuthButton(
-                    label: 'Register',
-                    onTap: () =>
-                        Navigator.pushReplacementNamed(context, '/register'),
-                    outlined: true),
+                    label: 'Log in', onTap: () => Navigator.pushReplacementNamed(context, '/'), outlined: true),
               ],
             ),
           ),

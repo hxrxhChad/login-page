@@ -10,7 +10,7 @@ class AuthCubit extends HydratedCubit<AuthState> {
   final AuthService authService = AuthService();
   AuthCubit() : super(const AuthState()) {}
 
-  Future<void> login() async {
+  Future<void> LOGIN() async {
     if (authService.loginFormError(email, password) == 'null') {
       // setStatus(Loading());
       debugPrint(email);
@@ -18,6 +18,10 @@ class AuthCubit extends HydratedCubit<AuthState> {
       setStatus(Status.loading);
       try {
         final uid = await authService.login(email, password);
+        if (uid == null) {
+          setStatus(Status.error);
+          setError('Something went wrong');
+        }
         setAuthId(uid!);
         setIsLogin(true);
         // setStatus(Loaded());
