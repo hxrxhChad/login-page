@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "544703518580",
+    "project_id": "loginpage-612aa",
+    "storage_bucket": "loginpage-612aa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:544703518580:android:ea8b8a8a22510e78567e21",
+        "android_client_info": {
+          "package_name": "com.example.waythru"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDniVYqSoWT2kGbugbmdCR9_aaWkyWr3QQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
