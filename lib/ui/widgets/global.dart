@@ -19,3 +19,12 @@ class HGap extends StatelessWidget {
     return SizedBox(width: width);
   }
 }
+
+class Loader extends StatelessWidget {
+  const Loader({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(body: Center(child: CircularProgressIndicator(),),);
+  }
+}

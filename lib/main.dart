@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:waythru/cubits/auth.dart';
+import 'package:waythru/services/services.dart';
 
 import 'utils/utils.dart';
 
@@ -27,19 +28,29 @@ class ConvoApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final AuthService service;
     Style().lightOverlay(context);
     return ScreenUtilInit(builder: (context, child) {
       return MultiBlocProvider(
-          providers: [
-            BlocProvider(create: (_) => AuthCubit())
-          ],
-          child: MaterialApp(
-              title: 'Convo',
-              debugShowCheckedModeBanner: false,
-              theme: Style.light,
-              themeMode: ThemeMode.light,
-              initialRoute: Pages.initial,
-              onGenerateRoute: Routes.onGenerateRoute));
+          providers: [BlocProvider(create: (_) => AuthCubit())],
+          child: const App());
     });
+  }
+}
+
+class App extends StatelessWidget {
+  const App({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: 'Convo',
+        debugShowCheckedModeBanner: false,
+        theme: Style.light,
+        themeMode: ThemeMode.light,
+        initialRoute: context.read<AuthCubit>().isLogin? Pages.home: Pages.initial,
+        onGenerateRoute: Routes.onGenerateRoute);
   }
 }

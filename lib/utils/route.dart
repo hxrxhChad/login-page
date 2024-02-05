@@ -8,7 +8,10 @@ class Routes {
   Routes();
   static List<PageModel> routes() {
     return [
-      const PageModel(route: Pages.initial, page: AuthView())
+      const PageModel(route: Pages.initial, page: AuthView()),
+      const PageModel(route: Pages.home, page: HomeView()),
+
+      
     ];
   }
 

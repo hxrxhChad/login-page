@@ -1,4 +1,4 @@
 class Pages {
   static const initial = '/';
-  static const register = '/register';
+  static const home = '/home';
 }
